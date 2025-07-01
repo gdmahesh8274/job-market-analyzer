@@ -4,6 +4,8 @@ import pandas as pd
 import io
 from PIL import Image
 
+
+
 # Set page config (must be FIRST Streamlit command)
 st.set_page_config(page_title="Job Experience Predictor", page_icon="🧳", layout="centered")
 
@@ -56,7 +58,9 @@ job_title = st.text_input("")
 col1, col2 = st.columns(2)
 with col1:
     if st.button("🧹 Clear"):
-        st.experimental_rerun()
+        st.session_state["job_title"] = ""
+        st.rerun()
+
 
 with col2:
     if st.button("✨ Predict Experience Level"):
