@@ -32,23 +32,9 @@ label_map = {
 
 # Extract skills
 def extract_skills(title):
-    keywords = {
-        "Python": ["python"],
-        "SQL": ["sql"],
-        "AWS": ["aws", "amazon web services"],
-        "Spark": ["spark"],
-        "Machine Learning": ["machine learning", "ml"],
-        "Deep Learning": ["deep learning", "dl", "tensorflow", "keras"],
-        "NLP": ["nlp", "natural language"],
-        "Power BI": ["power bi"],
-        "Tableau": ["tableau"],
-        "Data Engineering": ["data engineer", "etl", "pipeline"],
-        "Data Science": ["data scientist", "analytics"]
-    }
-    title = title.lower()
-    detected = [skill for skill, terms in keywords.items() if any(term in title for term in terms)]
+    skills = ["python", "sql", "aws", "excel", "tableau", "power bi", "spark", "pandas", "numpy"]
+    detected = [skill for skill in skills if skill.lower() in title.lower()]
     return detected
-
 # Input
 #theme = st.radio("🌓 Choose Theme:", ["Light", "Dark"], horizontal=True)
 st.write("🔍 **Enter a Job Title Below:**")
